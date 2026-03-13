@@ -1,44 +1,43 @@
-import { FiInstagram, FiMail, FiYoutube } from 'react-icons/fi'
-import { navItems } from '../data/content'
+import { FaAmazon } from 'react-icons/fa'
+import { FiInstagram, FiMail } from 'react-icons/fi'
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 py-8">
-      <div className="container-shell flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div>
-          <p className="font-display text-lg font-semibold tracking-[0.28em] text-white">KUNAL MARU</p>
-          <p className="mt-2 text-sm text-white/50">© 2026 dra_kunz. All rights reserved.</p>
-        </div>
+    <footer className="pb-10 pt-4">
+      <div className="container-shell">
+        <div className="section-divider-line mb-10 h-px w-full" />
 
-        <div className="flex flex-wrap gap-5">
-          {navItems.map((item) => (
-            <a key={item.label} href={item.href} className="text-sm text-white/50 transition hover:text-gold">
-              {item.label}
+        <div className="flex flex-col items-center gap-6 text-center">
+          <p className="font-display text-3xl font-semibold tracking-[0.45em] text-white sm:text-4xl">
+            DRA KUNZ
+          </p>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/dra_kunz/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition duration-300 hover:scale-105 hover:border-gold/60 hover:text-gold hover:shadow-[0_0_24px_rgba(212,175,55,0.22)]"
+            >
+              <FiInstagram />
             </a>
-          ))}
-        </div>
+            <a
+              href="mailto:teamdrakunz@gmail.com"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition duration-300 hover:scale-105 hover:border-gold/60 hover:text-gold hover:shadow-[0_0_24px_rgba(212,175,55,0.22)]"
+            >
+              <FiMail />
+            </a>
+            <a
+              href="https://www.amazon.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition duration-300 hover:scale-105 hover:border-gold/60 hover:text-gold hover:shadow-[0_0_24px_rgba(212,175,55,0.22)]"
+            >
+              <FaAmazon />
+            </a>
+          </div>
 
-        <div className="flex items-center gap-3">
-          <a
-            href="https://www.instagram.com/dra_kunz/"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:border-gold/60 hover:text-gold"
-          >
-            <FiInstagram />
-          </a>
-          <a
-            href="mailto:teamdrakunz@gmail.com"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:border-gold/60 hover:text-gold"
-          >
-            <FiMail />
-          </a>
-          <a
-            href="#portfolio"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition hover:border-gold/60 hover:text-gold"
-          >
-            <FiYoutube />
-          </a>
+          <p className="text-sm text-white/50">© 2026 dra_kunz. All rights reserved.</p>
         </div>
       </div>
     </footer>

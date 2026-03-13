@@ -44,6 +44,8 @@ function About() {
                 <img
                   src={kunalImage}
                   alt="Kunal Maru portrait"
+                  loading="lazy"
+                  decoding="async"
                   className="h-full min-h-[460px] w-full object-contain object-bottom transition duration-700 group-hover:scale-[1.03] lg:min-h-[620px]"
                 />
               </div>

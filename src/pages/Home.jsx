@@ -1,12 +1,18 @@
-import About from '../components/About'
-import Brands from '../components/Brands'
-import Contact from '../components/Contact'
+import { Suspense, lazy } from 'react'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
-import Portfolio from '../components/Portfolio'
 import SectionDivider from '../components/SectionDivider'
-import ShopSection from '../components/ShopSection'
+
+const Portfolio = lazy(() => import('../components/Portfolio'))
+const ShopSection = lazy(() => import('../components/ShopSection'))
+const Brands = lazy(() => import('../components/Brands'))
+const About = lazy(() => import('../components/About'))
+const Contact = lazy(() => import('../components/Contact'))
+
+function SectionFallback() {
+  return <div className="container-shell h-24 animate-pulse rounded-[24px] bg-white/[0.03]" />
+}
 
 function Home() {
   return (
@@ -16,15 +22,17 @@ function Home() {
       <main className="relative z-10">
         <Hero />
         <SectionDivider />
-        <Portfolio />
-        <SectionDivider />
-        <ShopSection />
-        <SectionDivider />
-        <Brands />
-        <SectionDivider />
-        <About />
-        <SectionDivider />
-        <Contact />
+        <Suspense fallback={<SectionFallback />}>
+          <Portfolio />
+          <SectionDivider />
+          <ShopSection />
+          <SectionDivider />
+          <Brands />
+          <SectionDivider />
+          <About />
+          <SectionDivider />
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </div>
